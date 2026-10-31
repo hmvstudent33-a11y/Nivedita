@@ -1,15 +1,21 @@
 
-name: Basic CI
+name: Basic CI Workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run CI
-        run: echo "Continuous Integration Successful!"
+      - name: Print message
+        run: echo "Welcome to GitHub Actions"
+
+      - name: Check workflow
+        run: echo "Workflow modified successfully"
